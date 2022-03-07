@@ -133,7 +133,6 @@ class App extends Component {
 
   async transfer(to, amount){
     if(this.state.dApps!=='undefined'){
-      if(this.state.account === this.state.a3 || this.state.account === this.state.b3 || this.state.account === this.state.c3){
         try{
           await this.state.dApps.methods.transfer(to, amount.toString()).send({from: this.state.account})
           .on('transactionHash', (hash) => {
@@ -149,7 +148,7 @@ class App extends Component {
         }
       }
 
-    }
+    
   }
 
   async redemption(amount){
